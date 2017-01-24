@@ -28,4 +28,4 @@ Layer 1 filters:
 
 Layer 2 filters:
 
-<img src="layer2_1filters.png" width="500" height="300" />
+<img src="layer1_1filters.png" width="500" height="300" />
