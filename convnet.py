@@ -19,7 +19,7 @@ testY  = np.eye(classes)[testY]
 # Parameters
 learning_rate = 1e-4
 max_epochs = 100
-display_step_size = 1 # Number of iterations before checking on the perfomance of network (validation)
+display_step_size = 10 # Number of iterations before checking on the perfomance of network (validation)
 prob_keep = 0.5
 
 # Convolutional Layer 1.
@@ -140,7 +140,7 @@ test_accurracy = [0]  # accuracy on test data
 #run session
 with tf.Session() as sess:
     sess.run(init)
-    epoch =1
+    epoch =0
 
     while epoch < max_epochs+1:
        #get a mini batch of size batchsize
@@ -171,7 +171,7 @@ with tf.Session() as sess:
     f, (ax1, ax2) = plt.subplots(1, 2, sharey=False, figsize=(15, 6))
     ax1.plot(training_loss, color='red', label='Training loss')
     ax1.plot(test_loss[0], test_loss[1],color ='blue',label='Test loss')
-    ax1.set_title('Loss: Training vs Test (with dropout reg.)')
+    ax1.set_title('Loss: Training vs Test')
     ax1.set_xlabel('Epochs')
     ax1.set_ylabel('Loss')
     ax1.margins(.05)
@@ -183,7 +183,7 @@ with tf.Session() as sess:
              color="red", label='Training: Acc ={0:.1f}%'.format(np.max(training_accuracy)))
     ax2.plot(np.array(range(len(test_accurracy))) * display_step_size, test_accurracy,
              color="blue", label='Test: Acc = {0:.1f}%'.format(np.max(test_accurracy)))
-    ax2.set_title('Accuracy: Training vs Test (with dropout reg.)')
+    ax2.set_title('Accuracy: Training vs Test')
     ax2.set_xlabel('Epochs')
     ax2.set_ylabel('Accuracy %')
     ax2.axis([0, max_epochs + 5, 0, 105])
