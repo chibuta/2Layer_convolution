@@ -12,6 +12,22 @@ Unzip the dataset first
 ```sh
 $ python convnet.py
 ```
+Network parameters:
+
+Layer 1:
+
+* Filter size = 5        
+* Number of filters = 16
+* max pooling = 2        
+
+Layer 2:
+
+* filter size  = 5          
+* number of filters = 36
+* max pooling - 2
+
+Regulaisation:  dropout (prob = 0.5)
+
 A successful run will should display a plot of the loss function and accuracy as shown below..
 
 <img src="loss.jpg" width="800" height="350" />
