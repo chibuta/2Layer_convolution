@@ -5,14 +5,14 @@ from matplotlib import pyplot as plt
 import math
 
 #load dataset
-data = np.load('data/ORL_faces.npz') #assumption is that the data is unzipped
+data = np.load('ORL_faces.npz') #assumption is that the data is unzipped
 trainX = data['trainX']
 testX = data['testX']
 trainY= data['trainY']
 testY= data['testY']
 
 classes = 20 #Number of classes
-#Reshape train test labels so that can be used in tensorflow softmax_cross_entropy_with_logits
+#Reshape train and test labels so that can be used in tensorflow softmax_cross_entropy_with_logits
 trainY = np.eye(classes)[trainY]
 testY  = np.eye(classes)[testY]
 
@@ -190,7 +190,8 @@ with tf.Session() as sess:
     ax2.legend(loc='best')
     ax2.grid()
 
-    def visualise_conv_filter(weights, session): #generate
+    def visualise_conv_filter(weights, session): 
+        #Visualise filters
 
         conv_filter = session.run(weights) # get weights
         # sub plots gridlayout
