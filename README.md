@@ -6,4 +6,14 @@ There are ten different images of each of 40 distinct subjects. For some subject
 
 <img src="faces.gif" width="400" height="400" />
 
+#Runing the script
+
+Unzip the dataset first 
+```sh
+$ python convnet.py
+```
+A successful run will should display a plot of the loss function and accuracy as shown below..
+
+<img src="loss.png" width="800" height="350" />
+
 
