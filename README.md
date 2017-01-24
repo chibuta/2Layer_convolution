@@ -14,6 +14,6 @@ $ python convnet.py
 ```
 A successful run will should display a plot of the loss function and accuracy as shown below..
 
-<img src="loss.png" width="800" height="350" />
+<img src="loss.jpg" width="800" height="350" />
 
 
