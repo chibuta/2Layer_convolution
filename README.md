@@ -22,10 +22,10 @@ A successful run will should display a plot of the loss function and accuracy as
 
 Layer 1 filters:
 
-<img src="layer1_filters.png" width="500" height="300" />
+<img src="layer1_1filters.png" width="500" height="300" />
 
 
 
 Layer 2 filters:
 
-<img src="layer1_1filters.png" width="500" height="300" />
+<img src="layer2_filters.png" width="500" height="300" />
