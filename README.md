@@ -26,7 +26,7 @@ Layer 2:
 * number of filters = 36
 * max pooling - 2
 
-Regulaisation:  dropout (prob = 0.5)
+Regularisation:  dropout (prob = 0.5)
 
 A successful run will should display a plot of the loss function and accuracy as shown below..
 
