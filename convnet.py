@@ -162,8 +162,7 @@ with tf.Session() as sess:
                   "Test accuracy: {4:>6.1%}".format(epoch, train_loss, train_acc, tst_loss,test_acc))
 
         epoch +=1
-        if train_loss < 1e-50:
-            break
+        
     print ('Optimisation done. Accuracy attained on test data:{0:.2f}'.format(max(test_accurracy)))
 
     # Plots training loss
