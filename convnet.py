@@ -12,7 +12,7 @@ trainY= data['trainY']
 testY= data['testY']
 
 classes = 20 #Number of classes
-#Reshape train and test labels so that can be used in tensorflow softmax_cross_entropy_with_logits
+#Reshape train and test labels to one hot vector
 trainY = np.eye(classes)[trainY]
 testY  = np.eye(classes)[testY]
 
@@ -65,7 +65,7 @@ def convolution(input_data,num_channels, filter_size, num_filters): # compute co
     out = tf.nn.conv2d(input=input_data, filter=W, strides=[1, 1, 1, 1], padding='SAME')
     # Add the biases
     out= tf.nn.bias_add(out,b)
-    #elu activation
+    #relu activation
     out = tf.nn.relu(out)
     return out, W
 
@@ -89,7 +89,7 @@ def compute_fc_layer(input_data,input_size, output_size, use_relu=True, user_dro
     # Use ReLU?
     if use_relu:
         out = tf.nn.relu(out)
-    #Add dropout if its not the out layer
+    #Add dropout regularisation if its not the out layer
     if user_dropout:
          out = tf.nn.dropout(out, prob_keep)
     return out
